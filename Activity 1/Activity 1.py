@@ -42,10 +42,13 @@ print("____________________________________")
 num4=[38, 82, 25, 74, 13]
 print("Before Insertion Sort")
 print (num4)
-for i in range(len(num4)):
-    for j in range(0,len(num4) -1 -i):
-        if num4[j]<num4[j+1]:
-            num4[j],num4[j+1] = num4[j+1],num4[j]
+for i in range(1, len(num4)):
+        key = num4[i]
+        j = i - 1
+        while j >= 0 and key > num4[j]:
+            num4[j + 1] = num4[j]
+            j -= 1
+            num4[j + 1] = key
 print("After Insertion Sort")
 print(num4)
 print("____________________________________")
